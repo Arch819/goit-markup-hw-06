@@ -120,12 +120,28 @@ button {
     height: 40px;
     background-color: var(--color-primary-brand);
     border-radius: 50%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color var(--time-transition-duration) var(--transition-timing-function);
 }
 
 .social-netwerk-icon {
     fill: var(--background-alerts);
+}
+
+.input {
+    background: transparent;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 8px 16px;
+    min-height: 40px;
+
+    transition: border var(--time-transition-duration) var(--transition-timing-function);
+}
+
+.input:focus {
+    border-color: var(--color-primary-brand);
 }
 
 /**------------------------------------ header------------------------------------------- */
@@ -242,8 +258,7 @@ button {
     transition: transform var(--time-transition-duration) var(--transition-timing-function);
 
     min-width: 408px;
-    height: 576px;
-    padding: 15px;
+    padding: 72px 24px;
 
     background: #FCFCFC;
     border: none;
@@ -279,9 +294,63 @@ button {
 }
 
 .close-btn:hover .icon-close-btn,
-.close-btn:focus .icon-close-btn{
+.close-btn:focus .icon-close-btn {
     fill: var(--color-hover-heading);
 }
+
+.form-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--background-color-text);
+    margin-bottom: 16px;
+}
+
+.form-label {
+    margin-bottom: 4px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--color-subtle-text);
+}
+
+.form-grop {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+
+    position: relative;
+}
+
+.form-grop > .input {
+    border-color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-form-input {
+    width: 100%;
+    padding-left: 38px;
+}
+
+.form-input-icon {
+    fill: var(--background-color-text);
+    width: 18px;
+    height: 24px;
+
+    position: absolute;
+    top: 26px;
+    left: 16px;
+
+    transition: fill var(--time-transition-duration) var(--transition-timing-function);
+}
+
+.modal-form-input:focus + .form-input-icon {
+    fill: var(--color-primary-brand);
+}
+
 /*?------------------------------------ hero--------------------------------------- */
 .hero {
     background-color: var(--background-color-text);
@@ -335,14 +404,12 @@ button {
     background-color: var(--background-alerts);
     border-radius: 4px;
     height: 112px;
-    padding: 24px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 8px;
 }
 
-.icon-box>.icon {
-    width: 64px;
-    height: 64px;
-}
 
 .item-title {
     font-weight: 500;
@@ -439,15 +506,6 @@ button {
     margin-bottom: 8px;
 }
 
-.team-network .social-netwerk-link {
-    padding: 12px;
-}
-
-
-.team-network .social-netwerk-icon {
-    width: 16px;
-    height: 16px;
-}
 
 
 /*?------------------------------------customers--------------------------------------- */
@@ -468,7 +526,11 @@ button {
 .customers-link {
     border: 1px solid var(--color-subtle-text);
     border-radius: 4px;
-    padding: 16px 32px;
+    width: 168px;
+    height: 88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     transition: border-color var(--time-transition-duration) var(--transition-timing-function);
 }
@@ -627,6 +689,10 @@ button {
     color: var(--background-alerts);
 }
 
+.footer-social-box {
+    margin-right: 80px;
+}
+
 .social-title {
     font-weight: 500;
     font-size: 16px;
@@ -636,17 +702,46 @@ button {
     margin-bottom: 16px;
 }
 
-
-.footer-social-box .social-netwerk-link {
-    padding: 8px;
-}
-
 .footer-social-box .social-netwerk-link:hover,
 .footer-social-box .social-netwerk-link:focus {
     background-color: var(--color-valid-success);
 }
 
-.footer-social-box .social-netwerk-icon {
+
+.footer-form-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-hover-heading);
+    margin-bottom: 24px;
+}
+
+.footer-email-input {
+    margin-right: 24px;
+    border-color: var(--color-hover-heading);
+    color: var(--color-hover-heading);
+
+
+    transition: border var(--time-transition-duration) var(--transition-timing-function);
+}
+
+.footer-modal-btn {
+    display: inline-flex;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    align-items: center;
+    letter-spacing: 0.04em;
+    background: var(--color-primary-brand);
+    color: var(--color-hover-heading);
+    padding: 8px 24px;
+    border: none;
+}
+
+.modal-btn-icon {
+    margin-left: 16px;
+    fill: var(--color-hover-heading);
     width: 24px;
-    height: 24px;
+    height: 20px;
 }
