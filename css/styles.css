@@ -10,8 +10,6 @@
     --color-hover-heading: #ffffff;
     --time-transition-duration: 250ms;
     --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-
 }
 
 body {
@@ -68,10 +66,11 @@ button {
     display: inline-block;
     font-weight: 500;
     font-size: 16px;
+    line-height: 1.5;
     letter-spacing: 0.04em;
     border-radius: 4px;
 
-    transition-property: color, border-color, box-shadow, background;
+    transition-property: color, border, box-shadow, background;
     transition-duration: var(--time-transition-duration);
     transition-timing-function: var(--transition-timing-function);
 }
@@ -123,7 +122,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color var(--time-transition-duration) var(--transition-timing-function);
+    transition: background var(--time-transition-duration) var(--transition-timing-function);
 }
 
 .social-netwerk-icon {
@@ -136,8 +135,9 @@ button {
     border-radius: 4px;
     padding: 8px 16px;
     min-height: 40px;
+    outline: none;
 
-    transition: border var(--time-transition-duration) var(--transition-timing-function);
+    transition: border-color var(--time-transition-duration) var(--transition-timing-function);
 }
 
 .input:focus {
@@ -258,7 +258,7 @@ button {
     transition: transform var(--time-transition-duration) var(--transition-timing-function);
 
     min-width: 408px;
-    padding: 72px 24px;
+    padding: 72px 24px 24px;
 
     background: #FCFCFC;
     border: none;
@@ -290,7 +290,7 @@ button {
     height: 8px;
     fill: var(--background-color-text);
 
-    transition: color var(--time-transition-duration) var(--transition-timing-function);
+    transition: fill var(--time-transition-duration) var(--transition-timing-function);
 }
 
 .close-btn:hover .icon-close-btn,
@@ -298,7 +298,7 @@ button {
     fill: var(--color-hover-heading);
 }
 
-.form-title {
+.form-text {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -314,19 +314,23 @@ button {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.01em;
     color: var(--color-subtle-text);
+}
+
+.name {
+    letter-spacing: 0.04em;
 }
 
 .form-grop {
     display: flex;
     flex-direction: column;
     margin-bottom: 8px;
-
     position: relative;
 }
 
-.form-grop > .input {
+.modal-form-input,
+.modal-form-comment {
     border-color: rgba(46, 47, 66, 0.4);
 }
 
@@ -347,8 +351,72 @@ button {
     transition: fill var(--time-transition-duration) var(--transition-timing-function);
 }
 
-.modal-form-input:focus + .form-input-icon {
+.modal-form-input:focus+.form-input-icon {
     fill: var(--color-primary-brand);
+}
+
+.comment-wrapp {
+    margin-bottom: 16px;
+}
+
+.modal-form-comment {
+    resize: none;
+    height: 120px;
+}
+
+.modal-form-comment::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.accept-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.form-input-accept {
+    appearance: none;
+
+    position: absolute;
+}
+
+
+.accept-craft-checkbox {
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    stroke-opacity: 0;
+    fill-opacity: 0;
+
+    border-radius: 2px;
+    cursor: pointer;
+
+    transition-property: fill-opacity, border-color;
+    transition-duration:  var(--time-transition-duration);
+    transition-timing-function:  var(--transition-timing-function);
+
+}
+
+.form-input-accept:checked+.accept-craft-checkbox {
+    border-color: transparent;
+    fill-opacity: 1;
+}
+
+.form-input-accept:focus+.accept-craft-checkbox {
+    outline: 2px solid rgb(67, 68, 85);
+}
+
+.privacy-policy {
+    line-height: 1.33;
+    color: var(--color-primary-brand);
+}
+
+.modal-form-btn {
+    display: block;
+    margin: 0 auto;
 }
 
 /*?------------------------------------ hero--------------------------------------- */
@@ -380,7 +448,7 @@ button {
     margin-right: auto;
 }
 
-.hero-btn {
+.servis-btn {
     background: var(--color-primary-brand);
     color: var(--color-hover-heading);
     min-width: 169px;
@@ -532,7 +600,7 @@ button {
     justify-content: center;
     align-items: center;
 
-    transition: border-color var(--time-transition-duration) var(--transition-timing-function);
+    transition: border var(--time-transition-duration) var(--transition-timing-function);
 }
 
 .customers-link:hover,
@@ -601,7 +669,7 @@ button {
 }
 
 .exampleworks-link {
-    transition-property: color, border-color, box-shadow;
+    transition-property: color, border, box-shadow;
     transition-duration: var(--time-transition-duration);
     transition-timing-function: var(--transition-timing-function);
 }
@@ -724,6 +792,14 @@ button {
 
 
     transition: border var(--time-transition-duration) var(--transition-timing-function);
+}
+
+.footer-email-input::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: var(--color-hover-heading);
 }
 
 .footer-modal-btn {
