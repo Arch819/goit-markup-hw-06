@@ -379,13 +379,6 @@ button {
     margin-bottom: 24px;
 }
 
-.form-input-accept {
-    appearance: none;
-
-    position: absolute;
-}
-
-
 .accept-craft-checkbox {
     border: 1px solid rgba(46, 47, 66, 0.4);
     stroke-opacity: 0;
@@ -395,8 +388,8 @@ button {
     cursor: pointer;
 
     transition-property: fill-opacity, border-color;
-    transition-duration:  var(--time-transition-duration);
-    transition-timing-function:  var(--transition-timing-function);
+    transition-duration: var(--time-transition-duration);
+    transition-timing-function: var(--transition-timing-function);
 
 }
 
